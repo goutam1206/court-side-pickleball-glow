@@ -1,0 +1,16 @@
+app = "my-node-app"  # Replace with your actual app name
+
+primary_region = "iad"  # e.g., iad (Virginia), sin (Singapore), bom (Mumbai)
+
+[build]
+# Dockerfile will be auto-detected if it's in the root
+
+[env]
+PORT = "8080"  # Your Node app must listen on this
+
+[http_service]
+internal_port = 8080  # Matches env.PORT
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
